@@ -1,0 +1,147 @@
+$pink: pink;
+$white: white;
+$black: black;
+$grey: grey;
+$lightgrey: lightgrey;
+
+$spacing-xl: 2rem;
+$spacing-l: 1.25rem;
+$spacing-m: 1rem;
+$spacing-s: 0.5rem;
+$spacing-xs: 0.25rem;
+
+$font-xl: 2.5rem;
+$font-l: 1.5rem;
+$font-m: 1.25rem;
+$font-s: 1rem;
+
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field {
+  text-transform: uppercase;
+}
+
+body {
+  font-size: 62.5%;
+  padding: $spacing-xl 0;
+}
+
+h1 {
+  font-size: $font-xl;
+  margin: 0;
+  padding: $spacing-m;
+}
+
+.text-l {
+  font-size: $font-l;
+  font-weight: bold;
+  margin: 0;
+  padding: $spacing-xs 0;
+}
+
+.text-m {
+  font-size: $font-m;
+  margin: 0;
+  padding: $spacing-xs 0;
+}
+
+.text-s {
+  font-size: $font-s;
+  margin: 0;
+  padding: $spacing-xs 0;
+}
+
+.button-save {
+  background-color: $white;
+  border: 0.25rem solid $black;
+  cursor: pointer;
+  margin: $spacing-m;
+  width: 8rem;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+article {
+  background-color: $pink;
+  padding: $spacing-m 0;
+
+  .image-container {
+    position: relative;
+
+    img {
+      height: 100%;
+      width: 100%;
+      padding: $spacing-m 0;
+    }
+
+    a {
+      background-color: $white;
+      color: $black;
+      margin: $spacing-m;
+      padding: $spacing-xs $spacing-s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .card-content {
+    padding: 0 $spacing-m;
+  }
+
+  .weather-container {
+    padding: $spacing-m 0;
+  }
+}
+
+form {
+  background-color: $lightgrey;
+  padding: $spacing-xl 0 $spacing-m;
+  text-align: center;
+
+  p {
+    display: inline-block;
+  }
+
+  .input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    margin-left: $spacing-xs;
+
+    &[type='text'] {
+      padding: $spacing-xs;
+      width: 11.5rem;
+    }
+
+    &[type='date'] {
+      padding: $spacing-xs $spacing-xs 0 $spacing-xs;
+      width: 15rem;
+    }
+  }
+}
+
+@media (min-width: 901px) {
+  article {
+    display: flex;
+    flex-direction: row;
+
+    img,
+    .card-content {
+      flex: 0 0 50%;
+    }
+
+    img {
+      padding: 0 $spacing-m;
+      width: 0;
+    }
+  }
+}
