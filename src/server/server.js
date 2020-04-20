@@ -26,6 +26,41 @@ app.listen(port, function () {
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {};
 
+// POST Route Base
+app.post('/base', postBase);
+function postBase(req, res) {
+  projectData = {};
+  projectData.location = req.body.location;
+  projectData.dateValue = req.body.dateValue;
+  projectData.daysLeft = req.body.daysLeft;
+
+  res.send({
+    location: projectData.location,
+    dateValue: projectData.dateValue,
+    daysLeft: projectData.daysLeft,
+  });
+}
+
+// POST Route Weatherbit
+app.post('/weatherbit', postWeatherbit);
+function postWeatherbit(req, res) {
+  projectData.temperature = req.body.temperature;
+  projectData.description = req.body.description;
+
+  res.send({
+    temperature: projectData.temperature,
+    description: projectData.description,
+  });
+}
+
+// POST Route Pixabay
+app.post('/pixabay', postPixabay);
+function postPixabay(req, res) {
+  projectData.imgSrc = req.body.imgSrc;
+
+  res.send({ imgSrc: projectData.imgSrc });
+}
+
 // GET all
 app.get('/all', getAll);
 function getAll(req, res) {
