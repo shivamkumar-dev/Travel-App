@@ -27,12 +27,12 @@ function handleSubmit(event) {
   
   const handleImage = (dateValue, daysLeft, locationList, locationQuery) => {
     Client.getData(
-      `https://pixabay.com/api/?key=15981019-602df5061e142303589608af5&q=${locationQuery}`
+      `https://pixabay.com/api/?key=16140205-f71e937433db0a9446e2eb888&q=${locationQuery}`
     ).then((data) => {
       if (data.total === 0) {
         const country = locationList[locationList.length - 1];
         Client.getData(
-          `https://pixabay.com/api/?key=15981019-602df5061e142303589608af5&q=${country}`
+          `https://pixabay.com/api/?key=16140205-f71e937433db0a9446e2eb888&q=${country}`
         ).then((data) => {
           postPixabay(data, dateValue, daysLeft, locationQuery);
         });
@@ -58,7 +58,7 @@ function handleSubmit(event) {
   
       if (!daysLeft) {
         Client.getData(
-          `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=349f7b9de5b24fb281f638662d60eeb8`
+          `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=36366b32967f47819d2a36306573bd84`
         ).then((data) => {
           const temperature = data.data[0].temp;
           const description = data.data[0].weather.description;
@@ -67,7 +67,7 @@ function handleSubmit(event) {
         });
       } else {
         Client.getData(
-          `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latitude}&lon=${longitude}&key=349f7b9de5b24fb281f638662d60eeb8`
+          `https://api.weatherbit.io/v2.0/forecast/daily?lat=${latitude}&lon=${longitude}&key=36366b32967f47819d2a36306573bd84`
         ).then((data) => {
           const daysList = data.data;
           const dayData = daysList.find((day) => day.valid_date === dateValue);

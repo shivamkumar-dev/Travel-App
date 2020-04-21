@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Travel App</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="main.css" rel="stylesheet"></head>
 
-  <body>
-    <h1>Travel Planner</h1>
+<head>
+  <title>Travel Planner</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="main.css" rel="stylesheet"></head>
 
-    <main>
-      <form>
-        <div>
-          <p class="text-l">My trip to:</p>
-          <input
-            id="location"
-            class="text-l input"
-            type="text"
-            placeholder="Delhi, India"
-          />
-        </div>
-        <div>
-          <p class="text-l">Departing:</p>
-          <input id="date" class="text-l input" type="date" />
-        </div>
-        <button type="submit" id="save" class="text-m button-save">
-          submit
-        </button>
-      </form>
+<body>
+  <div class="head">
+    <h1 id="quote">"Age is no Barrier when it comes to Travel..."</h1>
+    <h1 id="heading">Plan Your Travel Now</h1>
+  </div>
 
-      <div id="trips-placeholder"></div>
-    </main>
+  <main>
+    <form>
+      <div>
+        <p class="text-l">My trip to:</p>
+        <input id="location" class="text-l input" type="text" placeholder="Delhi, India" />
+      </div>
+      <div>
+        <p class="text-l">Departing:</p>
+        <input id="date" class="text-l input" type="date" />
+      </div>
+      <button type="submit" id="save" class="text-m button-save">
+        Get Info
+      </button>
+    </form>
 
-    <script>
-      // Check that service workers are supported
-      if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
-      }
+    <div id="trips-placeholder"></div>
+  </main>
 
-      document.addEventListener('DOMContentLoaded', function () {
-        document
-          .getElementById('save')
-          .addEventListener('click', Client.handleSubmit);
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
       });
-    </script>
-  <script type="text/javascript" src="main.js"></script></body>
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document
+        .getElementById('save')
+        .addEventListener('click', Client.handleSubmit);
+    });
+  </script>
+<script type="text/javascript" src="main.js"></script></body>
+
 </html>
